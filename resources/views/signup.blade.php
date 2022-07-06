@@ -55,13 +55,21 @@
         <div class="row justify-content-center align-items-center h-100">
             <div class="col-6">
                 <div class="header mb-5">
-                <h1>LOGIN</h1>
-                <p>Welcome back to your account</p>
+                <h1>SIGN UP</h1>
+                <p>Create a new account</p>
                 </div>
                 <div class="login-form">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter Your Email" />
+                </div>
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="fullName" class="form-control" id="full-name" placeholder="Enter Your Name" />
+                </div>
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input type="phoneNumber" class="form-control" id="phone-number" placeholder="Enter Your Phone Number" />
                 </div>
                 <div class="mb-3">
                     <label for="Password" class="form-label">Password</label>
