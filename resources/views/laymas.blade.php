@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
@@ -21,7 +21,7 @@
 
     <!-- logo title -->
     <link rel="icon" href="Assets/img/logo-homindo.svg" type="image/x-icon" />
-    <title>{{ $title }}</title>
+    <title>HOMINDO</title>
   </head>
   <body>
   <nav class="navbar navbar-expand-lg bg-white position-fixed w-100">
@@ -53,7 +53,28 @@
             </li>
           </ul>
           <div>
-            <a href="{{ route('login')}}" class="btn btn-danger">Sign Up/Log In</a>
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <a class="btn btn-danger" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            @endif
+                        @else
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                        @endguest
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@
               <h1>LOGIN</h1>
               <p>Welcome back to your account</p>
             </div>
-            <div class="login-form">
+            <div class="login-form" >
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="Enter Your Email" />

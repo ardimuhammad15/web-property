@@ -53,6 +53,7 @@ class UserController extends Controller
             'nama' => 'required', 
             'username' => 'required',
             'email' => 'required|email:dns',
+            'no_hp' => 'required',
             'password' => 'required', 
             'role_user' => 'required'
         ]); 
@@ -68,6 +69,7 @@ class UserController extends Controller
             'name' => $request->nama,
             'username' => $request->username,
             'email' => $request->email,
+            'no_hp' => $request->no_hp,
             'hashed_password' => Hash::make($request->password),
             'role' => $request->role_user,
             'created_at' => Carbon::now()->format('Y-m-d'),
@@ -83,6 +85,7 @@ class UserController extends Controller
         $credentials = $request->validate([
             'nama' => 'required', 
             'username' => 'required',
+            'no_hp' => 'required',
             'email' => 'required|email:dns',
             'password' => 'required', 
             'role_user' => 'required'
