@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dataagens', function (Blueprint $table) {
+        Schema::create('discounts', function (Blueprint $table) {
             $table->id();
-            $table->integer('agen_id');
-            $table->string('nama_agen');
-            $table->string('no_hp');
+            $table->string('name');
+            $table->string('code');
+            $table->text('description');
+            $table->integer('percentage');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dataagens');
+        Schema::dropIfExists('discounts');
     }
 };

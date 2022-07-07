@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('datarumahs', function (Blueprint $table) {
+        Schema::create('rents', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_rumah');
-            
-            $table->integer('harga');
-            $table->string('alamat_rumah');
-            $table->integer('stok');
-            $table->string('keterangan');
+            $table->string('name');
+            $table->string('slug');
+            $table->integer('price');
+            $table->string('location');
+            $table->string('address');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datarumahs');
+        Schema::dropIfExists('rents');
     }
 };
