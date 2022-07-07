@@ -28,3 +28,11 @@ Route::get('/signup', function () {
 Route::get('/unit', function () {
     return view('unit_rumah')->with('title','Unit');
 })->name('unit');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
