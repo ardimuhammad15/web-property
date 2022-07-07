@@ -22,14 +22,14 @@ return new class extends Migration
             $table->string('avatar')->nullable();
             $table->string('occupation')->nullable();
             $table->string('alamat')->nullable();
-            $table->string('no_hp');
+            $table->string('no_hp')->default('-');
             $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *
