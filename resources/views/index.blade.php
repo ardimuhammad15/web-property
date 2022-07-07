@@ -1,50 +1,20 @@
 @extends('laymas')
 @section('content')
-    <nav class="navbar navbar-expand-lg bg-white position-fixed w-100">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="Assets/img/logo-homindo.svg" alt="" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item mx-2">
-              <a class="nav-link active" aria-current="page" href="#">Buy</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="#">Rent</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="garis_verikal" href="#"></a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="navbar-brand" href="#">
-                <img src="Assets/img/residential-navbar.svg" alt="" />
-              </a>
-            </li>
-          </ul>
-          <div>
-            <a href="{{ route('login')}}" class="btn btn-danger">Sign Up/Log In</a>
-          </div>
-        </div>
-      </div>
-    </nav>
 
     <!-- hero section -->
     <section id="hero">
+      <div class="container mb-5">
+        <div class="jumbotron">
       <img src="Assets/img/banner.svg" alt="" class="img-hero" />
+      </div>
+        </div>
     </section>
 
     <!-- rekomendation -->
 
     <section id="recommendation">
-      <div class="container">
-        <div class="row mb-4">
+      <div class="container mt-2 mb-5">
+        <div class="row mb-2">
           <div class="col-12">
             <h2>Unit Recommendation</h2>
             </div>
@@ -52,7 +22,7 @@
 
           <div class="d-flex justify-content-between">
             <div class="row">
-              <div class="card p-2" style="width: 20rem;">
+              <div class="card p-2" style="width: 23rem;">
                 <img src="Assets/img/rumah1.svg" alt="">
 
                 <div class="card-fasilitas mt-3 p-1">
@@ -76,7 +46,7 @@
             </div>
 
             <div class="row">
-              <div class="card p-2" style="width: 20rem;">
+              <div class="card p-2" style="width: 23rem;">
                 <img src="Assets/img/rumah1.svg" alt="">
 
                 <div class="card-fasilitas mt-3 p-1">
@@ -100,7 +70,7 @@
             </div>
 
             <div class="row">
-              <div class="card p-2" style="width: 20rem;">
+              <div class="card p-2" style="width: 23rem;">
                 <img src="Assets/img/rumah1.svg" alt="">
 
                 <div class="card-fasilitas mt-3 p-1">
@@ -252,3 +222,4 @@
        
       </div>
     </section>
+@endsection

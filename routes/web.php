@@ -13,14 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', function () {
-    return view('index');
-});
+Route::get('/', function () {
+    return view('index')->with('title','Home');
+})-> name('home');
 
 Route::get('/login', function () {
-    return view('login');
+    return view('login')->with('title','Login');
 })-> name('login');
 
 Route::get('/signup', function () {
-    return view('signup');
+    return view('signup')->with('title','Sign Up');
 })->name('signup');
+
+Route::get('/unit', function () {
+    return view('unit_rumah')->with('title','Unit');
+})->name('unit');

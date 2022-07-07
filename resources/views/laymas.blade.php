@@ -24,6 +24,40 @@
     <title>{{ $title }}</title>
   </head>
   <body>
+  <nav class="navbar navbar-expand-lg bg-white position-fixed w-100">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="Assets/img/logo-homindo.svg" alt="" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item mx-2">
+              <a class="nav-link active" aria-current="page" href="#">Buy</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">Rent</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="garis_verikal" href="#"></a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="navbar-brand" href="#">
+                <img src="Assets/img/residential-navbar.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+          <div>
+            <a href="{{ route('login')}}" class="btn btn-danger">Sign Up/Log In</a>
+          </div>
+        </div>
+      </div>
+    </nav>
   @yield('content')
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>

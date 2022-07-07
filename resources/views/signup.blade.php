@@ -52,7 +52,6 @@
       </div>
 
       <div class="login-right w-50 h-100">
-        <div class="row justify-content-center align-items-center h-100">
             <div class="col-6">
                 <div class="header mb-5">
                 <h1>SIGN UP</h1>
@@ -76,15 +75,10 @@
                     <input type="password" class="form-control" id="Password" placeholder="Enter Password" />
                 </div>
                 <div class="button-login mb-3 text-center">
-                    <button type="button" class="btn btn-danger">Login</button>
-                </div>
-                <div class="text-center">
-                    <span class="d-inline">Don't have an account? <a href="#" class="d-inline text-decoration-none" style="color: red">Sign Up</a></span>
+                    <a href="{{ route('login')}}"><button type="button" class="btn btn-danger">Sign Up</button></a>
                 </div>
                 </div>
             </div>
-        </div>
-            
       </div>
     </section>
 

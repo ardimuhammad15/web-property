@@ -1,199 +1,200 @@
 :root {
-  --main-bg-color: #3ad0e7;
+    --main-bg-color: #3ad0e7;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 /* navbar */
 
 .navbar {
-  z-index: 3;
+    z-index: 3;
 }
 
 .nav-link {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 .garis_verikal {
-  border-left: 1px black solid;
-  height: 170px;
-  width: 0px;
+    border-left: 1px black solid;
+    height: 170px;
+    width: 0px;
 }
 
 .nav-link.active {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 /* hero section */
 #hero {
-  height: 100vh;
-  width: 100%;
+    width: 100%;
 }
 
 .img-hero {
-  height: 100%;
+    width: 100%;
 }
 
 /* unit recommendation */
 
 .h2,
 h2 {
-  color: #EF233C;
-  font-weight: 500;
-  font-size: 30px;
+    color: #ef233c;
+    font-weight: 500;
+    font-size: 30px;
 }
 
 /* recommendation */
 
-#recommendation {
-  padding: 100px 0;
-}
-
 .card {
-  background: aliceblue;
-  height: 100%;
-  border: none;
-  color: #EF233C;
-  font-size: 24px;
+    background: aliceblue;
+    height: 100%;
+    border: none;
+    color: #ef233c;
+    font-size: 24px;
 }
 
 .card-lokasi {
-  color: #000;
+    color: #000;
 }
 
 .card-fasilitas {
-  position: inherit;
-  right: 0;
-  left: 0;
-  bottom: 10px;
+    position: inherit;
+    right: 0;
+    left: 0;
+    bottom: 10px;
 }
 
 .card:hover {
-  background: linear-gradient(150deg, var(--main-bg-color), #39d9f1, #0a6f7e, #01373f);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: all ease-in 0.2s;
-  color: aliceblue;
+    background: linear-gradient(
+        150deg,
+        var(--main-bg-color),
+        #39d9f1,
+        #0a6f7e,
+        #01373f
+    );
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all ease-in 0.2s;
+    color: aliceblue;
 }
 
 .card:hover .card-fasilitas {
-  background-color: rgb(21, 182, 153);
+    background-color: rgb(21, 182, 153);
 }
 
 .card:hover .card-lokasi {
-  color: aliceblue;
-  transition: all ease-in-out 0.2s;
+    color: aliceblue;
+    transition: all ease-in-out 0.2s;
 }
 
 /* deskripsi rumah */
 #deskripsi-rumah {
-  padding: 10px 0;
+    padding: 10px 0;
 }
 
 .deskripsi h2 {
-  color: #EF233C;
-  font-size: 20px;
-  font-weight: 500;
+    color: #ef233c;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .deskripsi h1 {
-  color: #000;
-  font-size: 36px;
-  font-weight: 600;
+    color: #000;
+    font-size: 36px;
+    font-weight: 600;
 }
 
 .deskripsi p {
-  color: #000;
-  font-size: 16px;
-  font-weight: 400;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 /* fasilitas */
 #fasilitas-rumah {
-  padding: 10px 0;
+    padding: 10px 0;
 }
 
 #fasilitas-rumah .card {
-  color: #000;
+    color: #000;
 }
 
 /* hero bawah */
 .hero-bawah {
-  background-size: cover;
-  min-height: 60vh;
-  position: relative;
-  color: #000;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    min-height: 60vh;
+    position: relative;
+    color: #000;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .color-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* agents */
 .agent h2 {
-  color: #EF233C;
-  font-size: 40px;
-  font-weight: 500;
+    color: #ef233c;
+    font-size: 40px;
+    font-weight: 500;
 }
 
 .agent p {
-  color: #000;
-  font-size: 16px;
-  font-weight: 400;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 /* footer */
 
 #footer {
-  background-color: #EF233C;
+    background-color: #ef233c;
 }
 
 .footer {
-  color: #fff;
+    color: #fff;
 }
 
 .footer h3 {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 /* login */
 .login {
-  height: 100vh;
+    height: 100vh;
 }
 
 .header h1 {
-  font-weight: 600;
-  font-size: 48px;
-  line-height: 72px;
-  color: #000000;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    color: #000000;
 }
 
 .header p {
-  position: absolute;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  color: #E8717F;
+    position: absolute;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #e8717f;
 }
 
 .login-form span {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-  text-align: center;
-  color: #000000;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
 }
 
 .login-form span a {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .carousel-inner {
-  border-image-width: 100vh;
+    border-image-width: 100vh;
 }
