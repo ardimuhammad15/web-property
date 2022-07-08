@@ -175,23 +175,23 @@
                                     type="cardNumber"
                                     class="form-control"
                                     id="cardNumber"
-                                    placeholder="Expired"
                                 />
                             </div>
                             <div class="col-6">
                                 <label for="cardNumber" class="form-label"
-                                    >CVV</label
+                                    >CVC</label
                                 >
                                 <input
                                     type="cardNumber"
                                     class="form-control"
                                     id="cardNumber"
-                                    placeholder="CVV"
                                 />
                             </div>
                         </div>
+                        <a href="{{ route ('dashboard') }}">
                         <button type="button" class="btn btn-danger w-100 mt-4">Pay Now</button>
-                        <p class="text-center mt-2" style="opacity: .6; font-size: 14px;">Your payment is secure and encrypted</p>
+                        </a>
+                        <p class="text-center mt-2" style="opacity: .6; font-size: 14px;"><img src="Assets/img/icon_secure.svg" alt="">Your payment is secure and encrypted</p>
                     </div>
                 </div>
             </div>

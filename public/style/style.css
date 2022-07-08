@@ -6,6 +6,15 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+/* link */
+a:link {
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    background-color: transparent;
+    text-decoration: none;
+}
 /* navbar */
 
 .navbar {

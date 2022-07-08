@@ -26,8 +26,16 @@ Route::get('/signup', function () {
 })->name('signup');
 
 Route::get('/unit', function () {
-    return view('unit_rumah')->with('title','Unit');
+    return view('unit')->with('title','Unit');
 })->name('unit');
+
+Route::get('/checkout', function () {
+    return view('checkout')->with('title','Checkout');
+})->name('checkout');
+
+Route::get('/dashboard', function () {
+    return view('dashboard')->with('title','Dashboard');
+})->name('dashboard');
 
 Auth::routes();
 
