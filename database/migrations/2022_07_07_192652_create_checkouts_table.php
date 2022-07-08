@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\ForeignKeyDefinition;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -15,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->bigInteger('user_id');
             $table->integer('house_id');
             $table->integer('rent_id');
             $table->integer('discounts_id');
@@ -25,6 +26,9 @@ return new class extends Migration
             $table->boolean('is_paid');
             $table->timestamps();
             $table->softDeletes();
+
+            // $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
+            $table->foreign('house_id')->references('id')->on('house')->onDelete('cascade');
         });
     }
 
