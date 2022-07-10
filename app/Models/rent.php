@@ -9,5 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class rent extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $fillable = ['name', 'price', 'location', 'address'];
+    protected $table = 'rent_table';
+    protected $primaryKeys = 'id';
+    protected $fillable = ['id', 'name', 'slug', 'price', 'location', 'address'];
 }
