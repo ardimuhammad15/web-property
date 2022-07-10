@@ -16,19 +16,21 @@ return new class extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->integer('house_id');
-            $table->integer('rent_id');
-            $table->integer('discounts_id');
+            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
+            $table->foreign('house_id')->references('id')->on('house')->onDelete('cascade');
+            $table->foreign('rent_id')->references('id')->on('rent')->onDelete('cascade');
+            $table->foreign('discount_id')->references('id')->on('discount')->onDelete('cascade');
             $table->string('card_number');
             $table->date('expired');
             $table->string('cvc');
-            $table->boolean('is_paid');
+            $table->boolean('is_paid')->default(false);
             $table->timestamps();
             $table->softDeletes();
 
-            // $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
-            $table->foreign('house_id')->references('id')->on('house')->onDelete('cascade');
+            
+            
+            
+            
         });
     }
 
