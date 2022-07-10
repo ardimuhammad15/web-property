@@ -34,9 +34,6 @@ Route::get('/signup', function () {
 Route::get('/unit', function () {
     return view('unit')->with('title','Unit');
 })->name('unit');
-Route::get('/test', function () {
-    return view('midtranstest')->with('title','test');
-},[App\Http\Controllers\Services\Midtrans])->name('test');
 
 Route::resource('orders', OrderController::class)->only(['index', 'show']);
 
@@ -51,6 +48,8 @@ Route::get('/dashboard', function () {
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/test', [App\Http\Controllers\OrderController::class, 'index'])->name('test');
 
 Auth::routes();
 

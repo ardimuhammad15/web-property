@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\rent;
+use App\Models\checkout;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -12,9 +14,30 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        \Midtrans\Config::$serverKey = 'SB-Mid-server-yQGsxC_boThflzWliH2S4k5I';
+        \Midtrans\Config::$isProduction = false;
+        \Midtrans\Config::$isSanitized = true;
+        \Midtrans\Config::$is3ds = true;
+
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => rand(),
+                'gross_amount' => 1000000000,
+            ),
+            'customer_details' => array(
+                'first_name' => 'budi',
+                'last_name' => 'pratama',
+                'email' => 'budi.pra@example.com',
+                'phone' => '08111222333',
+            ),
+        );
+         
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+
+        return view('midtranstest', ['snap_token' => $snapToken]);
+        $snapToken;
     }
 
     /**
@@ -22,8 +45,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         //
     }
 
@@ -91,6 +113,7 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+     
     }
+    
 }
