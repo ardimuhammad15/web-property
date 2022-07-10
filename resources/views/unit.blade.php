@@ -41,6 +41,13 @@
     <body>
         <section id="unit_rumah">
             <div class="container p-2">
+            <div>
+                            <a href="{{ route ('home') }}"
+                                ><button type="button" class="btn btn-secondary">
+                                <i class="fa-solid fa-arrow-left me-2"></i>Kembali
+                                </button></a
+                            >
+                        </div>
                   <div class="row justify-content-center">
                     <div class="cardcarousel p-2" style="width: 40rem;">
                         <div
@@ -138,12 +145,25 @@
                                 </i>
                             </span>
                         </div>
-                        <div class="button_agen">
+                        <div class="button_agen mt-2">
                             <a href="#"
                                 ><button type="button" class="btn btn-danger">
                                     Lanjut Kontak Agen
                                 </button></a
                             >
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                Harga Unit
+                                <div class="box">
+                                    <h3>IDR 650.000.000</h3>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <a href="{{ route ('checkout') }}">
+                                    <button class="btn btn-success w-100">DP<br><b>IDR 10.000.000</b></button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                   </div>

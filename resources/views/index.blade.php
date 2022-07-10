@@ -22,9 +22,36 @@
 
           <div class="d-flex justify-content-between">
             <div class="row">
-              <div class="card p-2" style="width: 23rem;">
-                <img src="Assets/img/rumah1.svg" alt="">
+              <div class="card p-2" style="width: 23rem;"> 
+              <a href="{{ route ('unit') }}">
+                <img src="Assets/img/rumah1.svg" alt="" class="d-block w-100">
+              </a>
+                <div class="card-fasilitas mt-3 p-1">
+                  <span class="ms-3">
+                    <img src="Assets/img/icon_bathtub-f.svg" alt="" ><sub class="ms-1">2</sub>
+                  </span>
+                  <span class="ms-3">
+                    <img src="Assets/img/icon_bed.svg" alt=""><sub class="ms-1" style="font-size: 18px;">2</sub>
+                  </span>
+                  <span class="ms-3">
+                    <img src="Assets/img/icon_luas.svg" alt="" ><sub class="ms-1">2</sub>
+                  </span>
+                </div>
 
+                <div class="card-lokasi mt-4">
+                  <span>
+                    <img src="Assets/img/icon_lokasi.svg" alt="" style="width: 30px;"> <span style="font-weight: 500 ; font-size: 20px">Serpong, BSD</span>
+                  </span>
+                </div>
+              
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="card p-2" style="width: 23rem;">
+              <a href="{{ route ('unit') }}">
+                <img src="Assets/img/rumah2.svg" alt="" class="d-block w-100">
+              </a>
                 <div class="card-fasilitas mt-3 p-1">
                   <span class="ms-3">
                     <img src="Assets/img/icon_bathtub-f.svg" alt="" ><sub class="ms-1">2</sub>
@@ -47,32 +74,9 @@
 
             <div class="row">
               <div class="card p-2" style="width: 23rem;">
-                <img src="Assets/img/rumah1.svg" alt="">
-
-                <div class="card-fasilitas mt-3 p-1">
-                  <span class="ms-3">
-                    <img src="Assets/img/icon_bathtub-f.svg" alt="" ><sub class="ms-1">2</sub>
-                  </span>
-                  <span class="ms-3">
-                    <img src="Assets/img/icon_bed.svg" alt=""><sub class="ms-1" style="font-size: 18px;">2</sub>
-                  </span>
-                  <span class="ms-3">
-                    <img src="Assets/img/icon_luas.svg" alt="" ><sub class="ms-1">2</sub>
-                  </span>
-                </div>
-
-                <div class="card-lokasi mt-4">
-                  <span>
-                    <img src="Assets/img/icon_lokasi.svg" alt="" style="width: 30px;"> <span style="font-weight: 500 ; font-size: 20px">Serpong, BSD</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="card p-2" style="width: 23rem;">
-                <img src="Assets/img/rumah1.svg" alt="">
-
+              <a href="{{ route ('unit') }}">
+                <img src="Assets/img/rumah3.svg" alt="" class="d-block w-100">
+              </a>
                 <div class="card-fasilitas mt-3 p-1">
                   <span class="ms-3">
                     <img src="Assets/img/icon_bathtub-f.svg" alt="" ><sub class="ms-1">2</sub>

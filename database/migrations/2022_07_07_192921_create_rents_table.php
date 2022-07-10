@@ -17,10 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->integer('price');
+            $table->integer('price')->unsigned();
             $table->string('location');
             $table->string('address');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
