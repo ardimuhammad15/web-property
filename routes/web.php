@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaymentCallbackController; 
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index')->with('title','Home');
 })-> name('home');
+Route::get('/checkout', function () {
+    return view('checkout');
+})-> name('checkout');
 
 Route::get('/login', function () {
     return view('login')->with('title','Login');
@@ -29,10 +35,14 @@ Route::get('/unit', function () {
     return view('unit_rumah')->with('title','Unit');
 })->name('unit');
 
-Auth::routes();
-
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('orders', OrderController::class)->only(['index', 'show']);
 
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('payments/midtrans-notification', [PaymentCallbackController::class, 'receive']);
