@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('pesanan_details', function (Blueprint $table) {
             $table->id();
-            $table->integer('pesanan_id');
-            $table->integer('barang_id');
-            $table->integer('jumlah_harga');
+            $table->string('fullname');
+            $table->string('email');
+            $table->string('occupation');
+            $table->string('phone');
             $table->timestamps();
         });
     }

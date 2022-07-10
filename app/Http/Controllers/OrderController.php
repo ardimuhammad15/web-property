@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\rent;
 use App\Models\checkout;
+use App\MOdels\pesanan_detail;
 use Illuminate\Http\Request;
+use DB;
 
 class OrderController extends Controller
 {
@@ -21,16 +23,20 @@ class OrderController extends Controller
         \Midtrans\Config::$isSanitized = true;
         \Midtrans\Config::$is3ds = true;
 
+        $name = $request->fullname;
+        $email = $request->email;
+        $phone = $request->phone;
+
         $params = array(
             'transaction_details' => array(
                 'order_id' => rand(),
-                'gross_amount' => 1000000000,
+                'gross_amount' => 10000000,
             ),
             'customer_details' => array(
-                'first_name' => 'budi',
-                'last_name' => 'pratama',
-                'email' => 'budi.pra@example.com',
-                'phone' => '08111222333',
+                'first_name' => $name,
+                'last_name' => '',
+                'email' => $email,
+                'phone' => $phone,
             ),
         );
          
@@ -46,7 +52,7 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        //
+
     }
 
     /**
@@ -57,7 +63,14 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('pesanan_details')->insert([
+            'fullname' => $request->name,
+            'occupation' => $request->occupation,
+            'email' => $request->email,
+            'phone' => $request->phone
+        ]);
+        sleep(10);
+        return redirect('/checkout');
     }
 
     /**
@@ -68,18 +81,6 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        $snapToken = $order->snap_token;
-        if (is_null($snapToken)) {
-            // If snap token is still NULL, generate snap token and save it to database
-
-            $midtrans = new CreateSnapTokenService($order);
-            $snapToken = $midtrans->getSnapToken();
-
-            $order->snap_token = $snapToken;
-            $order->save();
-        }
-
-        return view('orders.show', compact('order', 'snapToken'));
     }
 
     /**
@@ -91,6 +92,30 @@ class OrderController extends Controller
     public function edit(Order $order)
     {
         //
+    }
+    public function payment(Order $order)
+    {
+        
+        \Midtrans\Config::$serverKey = 'SB-Mid-server-yQGsxC_boThflzWliH2S4k5I';
+        \Midtrans\Config::$isProduction = false;
+        \Midtrans\Config::$isSanitized = true;
+        \Midtrans\Config::$is3ds = true;
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => rand(),
+                'gross_amount' => 10000000,
+            ),
+            'customer_details' => array(
+                'first_name' => 'Stevani',
+                'last_name' => 'Kurniawan',
+                'email' => 'stevani@gmail.com',
+                'phone' => '029282',
+            ),
+        );
+         
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+
+        return view('checkout',['snap_token' => $snapToken]);
     }
 
     /**

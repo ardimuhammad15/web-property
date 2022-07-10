@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PaymentCallbackController; 
+use App\Http\Controllers\OrderController; 
 
 
 
@@ -54,6 +54,8 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/test', [App\Http\Controllers\OrderController::class, 'index'])->name('test');
+Route::get('/payment', [App\Http\Controllers\OrderController::class, 'payment'])->name('payment');
+Route::post('/payment/store', [App\Http\Controllers\OrderController::class, 'store'])->name('paymentstore');
 
 Auth::routes();
 
