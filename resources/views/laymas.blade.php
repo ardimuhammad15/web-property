@@ -56,7 +56,7 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <a class="btn btn-danger" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="btn btn-danger" href="{{ route('login') }}">SIGN UP / LOG IN</a>
                             @endif
                         @else
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
