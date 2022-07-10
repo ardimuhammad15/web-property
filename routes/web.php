@@ -37,6 +37,10 @@ Route::get('/dashboard', function () {
     return view('dashboard')->with('title','Dashboard');
 })->name('dashboard');
 
+Route::get('/input_dashboard', function () {
+    return view('input_dashboard')->with('title','Dashboard-Admin');
+})->name('input_dashboard');
+
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
