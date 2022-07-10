@@ -20,5 +20,9 @@ class DatabaseSeeder extends Seeder
         // $this->call([
         //     AdminUserSeeder::class,
         // ]);
+        $this->call([
+            RentSeeder::class,
+            DiscountSeeder::class
+            ]);
     }
 }
