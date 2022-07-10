@@ -9,7 +9,24 @@
   </head>
  
   <body>
-    <button id="pay-button">Pay!</button>
+  <form action="">
+        <form>
+            <div>
+                <label>Full Name</label> <br>
+                <input name="name" type="text">
+            </div>
+            <div>
+                <label>Email</label> <br>
+                <input name="email" type="text">
+            </div>
+            <div>
+                <label>Email</label> <br>
+                <input name="phone" type="text">
+            </div>
+        </form>
+    </form>
+    <!-- script ini dibuat untuk menampilkan input form ketika di submit -->
+    <button id="pay-button" >Pay!</button>
  
     <script type="text/javascript">
       // For example trigger on button clicked, or any time you need

@@ -34,6 +34,10 @@
             href="Assets/img/logo-homindo.svg"
             type="image/x-icon"
         />
+        <!-- Midtrans-->
+        <script type="text/javascript"
+      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      data-client-key="SB-Mid-client-rH1BxMDVu6RsH7pA"></script>
         <title>HOMINDO</title>
     </head>
     <body>
@@ -121,85 +125,59 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4 justify-content-center align-items-cente">
-                        <div class="mb-3r">
-                            <label for="email" class="form-label"
-                                >Email Address</label
-                            >
-                            <input
-                                type="email"
-                                class="form-control"
-                                id="email"
-                                placeholder="Enter Your Email"
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <label for="fullName" class="form-label"
-                                >Full Name</label
-                            >
-                            <input
-                                type="fullName"
-                                class="form-control"
-                                id="full-name"
-                                placeholder="Enter Your Name"
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <label for="occupation" class="form-label"
-                                >Occupation</label
-                            >
-                            <input
-                                type="occupation"
-                                class="form-control"
-                                id="occupation"
-                                placeholder="Enter Your Occupation"
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <label for="cardNumber" class="form-label"
-                                >Card Number</label
-                            >
-                            <input
-                                type="cardNumber"
-                                class="form-control"
-                                id="cardNumber"
-                                placeholder="Enter Your Card Number"
-                            />
-                        </div>
-                        <div class="cardNumber1 row">
-                            <div class="col-6">
-                                <label for="cardNumber" class="form-label"
-                                    >Expired</label
+                    <form method="post" action="/payment/store">
+                    {{ csrf_field() }}
+                        <div class="col-4 justify-content-center align-items-center">
+                            <div class="mb-3">
+                                <label for="email" class="form-label"
+                                    >Email Address</label
                                 >
                                 <input
-                                    type="cardNumber"
+                                    type="email"
                                     class="form-control"
-                                    id="cardNumber"
+                                    id="email"
+                                    placeholder="Enter Your Email" name="email"
                                 />
                             </div>
-                            <div class="col-6">
-                                <label for="cardNumber" class="form-label"
-                                    >CVC</label
+                            <div class="mb-3">
+                                <label for="name" class="form-label"
+                                    >Full Name</label
                                 >
                                 <input
-                                    type="cardNumber"
+                                    type="fullName"
                                     class="form-control"
-                                    id="cardNumber"
+                                    id="full-name"
+                                    placeholder="Enter Your Name" name="name"
                                 />
                             </div>
-                        </div>
-                        <a href="{{ route ('dashboard') }} ">
-                        <button type="button" class="btn btn-danger w-100 mt-4">Pay Now</button>
-                        </a>
-                        <p class="text-center mt-2" style="opacity: .6; font-size: 14px;"><img src="Assets/img/icon_secure.svg" alt="">Your payment is secure and encrypted</p>
-                    </div>
+                            <div class="mb-3">
+                                <label for="occupation" class="form-label"
+                                    >Occupation</label
+                                >
+                                <input
+                                    type="occupation"
+                                    class="form-control"
+                                    id="occupation"
+                                    placeholder="Enter Your Occupation" name="occupation"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label"
+                                    >Phone Number</label
+                                >
+                                <input
+                                    type="phone"
+                                    class="form-control"
+                                    id="phone"
+                                    placeholder="Enter Your Phone Number" name="phone"
+                                />
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100 mt-4" id="pay-button">Pay Now</button>
+
+                        </div> 
+                    </form>
                 </div>
             </div>
-            @if ($order->payment_status == 1)
-                <button class="btn btn-primary" id="pay-button">Pay Now</button>
-            @else
-                Payment successful
-            @endif
         </section>
 
         <script
@@ -207,34 +185,30 @@
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
             crossorigin="anonymous"
         ></script>
-        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}">
-    </script>
-    <script>
-        const payButton = document.querySelector('#pay-button');
-        payButton.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            snap.pay('{{ $snapToken }}', {
-                // Optional
-                onSuccess: function(result) {
-                    /* You may add your own js here, this is just example */
-                    // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-                    console.log(result)
-                },
-                // Optional
-                onPending: function(result) {
-                    /* You may add your own js here, this is just example */
-                    // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-                    console.log(result)
-                },
-                // Optional
-                onError: function(result) {
-                    /* You may add your own js here, this is just example */
-                    // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-                    console.log(result)
-                }
-            });
-        });
+        <script type="text/javascript">
+      // For example trigger on button clicked, or any time you need
+      var payButton = document.getElementById('pay-button');
+      payButton.addEventListener('click', function () {
+        // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+        window.snap.pay('{{$snap_token}}', {
+          onSuccess: function(result){
+            /* You may add your own implementation here */
+            alert("payment success!"); console.log(result); 
+          },
+          onPending: function(result){
+            /* You may add your own implementation here */
+            alert("wating your payment!"); console.log(result);
+          },
+          onError: function(result){
+            /* You may add your own implementation here */
+            alert("payment failed!"); console.log(result);
+          },
+          onClose: function(){
+            /* You may add your own implementation here */
+            alert('you closed the popup without finishing the payment');
+          }
+        })
+      });
     </script>
     </body>
 </html>
