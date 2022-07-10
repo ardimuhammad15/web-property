@@ -26,5 +26,20 @@ class Midtrans {
         Config::$isProduction = $this->isProduction;
         Config::$isSanitized = $this->isSanitized;
         Config::$is3ds = $this->is3ds;
+        
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => rand(),
+                'gross_amount' => 10000,
+            ),
+            'customer_details' => array(
+                'first_name' => 'budi',
+                'last_name' => 'pratama',
+                'email' => 'budi.pra@example.com',
+                'phone' => '08111222333',
+            ),
+        );
+         
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
     }
 }

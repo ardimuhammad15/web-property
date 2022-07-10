@@ -34,6 +34,9 @@ Route::get('/signup', function () {
 Route::get('/unit', function () {
     return view('unit_rumah')->with('title','Unit');
 })->name('unit');
+Route::get('/test', function () {
+    return view('midtranstest')->with('title','test');
+},[App\Http\Controllers\Services\Midtrans])->name('test');
 
 Route::resource('orders', OrderController::class)->only(['index', 'show']);
 
