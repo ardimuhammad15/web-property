@@ -1,3 +1,4 @@
+@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -37,7 +38,7 @@
         <!-- Midtrans-->
         <script type="text/javascript"
       src="https://app.sandbox.midtrans.com/snap/snap.js"
-      data-client-key="SB-Mid-client-rH1BxMDVu6RsH7pA"></script>
+      data-client-key="SB-Mid-client-vCpvH1Y6r3kkUWqn"></script>
         <title>HOMINDO</title>
     </head>
     <body>
@@ -125,10 +126,12 @@
                             </div>
                         </div>
                     </div>
-                    <form method="post" action="/payment/store">
-                    {{ csrf_field() }}
+
+                   
                         <div class="col-4 justify-content-center align-items-center">
-                            <div class="mb-3">
+                        <form method="post" action="/payment/store">  
+                        {{ csrf_field() }} 
+                        <div class="mb-3">
                                 <label for="email" class="form-label"
                                     >Email Address</label
                                 >
@@ -190,10 +193,10 @@
       var payButton = document.getElementById('pay-button');
       payButton.addEventListener('click', function () {
         // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-        window.snap.pay('{{$snap_token}}', {
+        window.snap.pay('{{ $snap_token }}', {
           onSuccess: function(result){
             /* You may add your own implementation here */
-            alert("payment success!"); console.log(result); 
+            console.log(result);
           },
           onPending: function(result){
             /* You may add your own implementation here */

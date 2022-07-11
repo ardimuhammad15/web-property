@@ -8,6 +8,7 @@ use App\Models\checkout;
 use App\MOdels\pesanan_detail;
 use Illuminate\Http\Request;
 use DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class OrderController extends Controller
 {
@@ -18,32 +19,27 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        \Midtrans\Config::$serverKey = 'SB-Mid-server-yQGsxC_boThflzWliH2S4k5I';
+        \Midtrans\Config::$serverKey = 'SB-Mid-server-7ChlCRNbt98g2bwTFoar_M9v';
         \Midtrans\Config::$isProduction = false;
         \Midtrans\Config::$isSanitized = true;
         \Midtrans\Config::$is3ds = true;
-
-        $name = $request->fullname;
-        $email = $request->email;
-        $phone = $request->phone;
-
         $params = array(
             'transaction_details' => array(
                 'order_id' => rand(),
                 'gross_amount' => 10000000,
             ),
             'customer_details' => array(
-                'first_name' => $name,
-                'last_name' => '',
-                'email' => $email,
-                'phone' => $phone,
+                'first_name' => 'Stevani',
+                'last_name' => 'Kurniawan',
+                'email' => 'stevani@gmail.com',
+                'phone' => '029282',
             ),
         );
          
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
-        return view('midtranstest', ['snap_token' => $snapToken]);
-        $snapToken;
+        return view('midtranstest',['snap_token' => $snapToken]);
+        Alert::success('Payment Success', 'Your Payment has been Successful');
     }
 
     /**
@@ -69,8 +65,8 @@ class OrderController extends Controller
             'email' => $request->email,
             'phone' => $request->phone
         ]);
-        sleep(10);
-        return redirect('/checkout');
+        sleep(5);
+        return redirect('/dashboard');
     }
 
     /**
@@ -93,10 +89,10 @@ class OrderController extends Controller
     {
         //
     }
-    public function payment(Order $order)
+    public function payment()
     {
         
-        \Midtrans\Config::$serverKey = 'SB-Mid-server-yQGsxC_boThflzWliH2S4k5I';
+        \Midtrans\Config::$serverKey = 'SB-Mid-server-7ChlCRNbt98g2bwTFoar_M9v';
         \Midtrans\Config::$isProduction = false;
         \Midtrans\Config::$isSanitized = true;
         \Midtrans\Config::$is3ds = true;
@@ -116,6 +112,7 @@ class OrderController extends Controller
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
         return view('checkout',['snap_token' => $snapToken]);
+        Alert::success('Payment Success', 'Your Payment has been Successful');
     }
 
     /**
