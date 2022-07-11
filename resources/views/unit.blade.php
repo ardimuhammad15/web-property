@@ -146,7 +146,7 @@
                             </span>
                         </div>
                         <div class="button_agen mt-2">
-                            <a href="#"
+                            <a href="https://wa.me/6281295403122"
                                 ><button type="button" class="btn btn-danger">
                                     Lanjut Kontak Agen
                                 </button></a
@@ -160,7 +160,7 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <a href="{{ route ('checkout') }}">
+                                <a href="{{ route ('payment') }}">
                                     <button class="btn btn-success w-100">DP<br><b>IDR 10.000.000</b></button>
                                 </a>
                             </div>

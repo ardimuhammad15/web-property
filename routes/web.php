@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController; 
-
-
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,9 +40,7 @@ Route::get('/checkout', function () {
     return view('checkout')->with('title','Checkout');
 })->name('checkout');
 
-Route::get('/dashboard', function () {
-    return view('dashboard')->with('title','Dashboard');
-})->name('dashboard');
+Route::get('/dashboard',[App\Http\Controllers\OrderController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/input_dashboard', function () {
     return view('input_dashboard')->with('title','Dashboard-Admin');
