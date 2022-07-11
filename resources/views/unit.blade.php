@@ -146,7 +146,7 @@
                             </span>
                         </div>
                         <div class="button_agen mt-2">
-                            <a href="#"
+                            <a href="https://wa.me/6281295403122"
                                 ><button type="button" class="btn btn-danger">
                                     Lanjut Kontak Agen
                                 </button></a

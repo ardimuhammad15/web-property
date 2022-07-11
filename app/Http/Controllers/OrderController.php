@@ -67,6 +67,7 @@ class OrderController extends Controller
         ]);
         sleep(5);
         return redirect('/dashboard');
+        
     }
 
     /**
@@ -137,5 +138,9 @@ class OrderController extends Controller
     {
      
     }
-    
+    public function dashboard()
+    {
+        return view('dashboard');
+
+    }
 }

@@ -69,11 +69,9 @@
                             IDR650,000,000,-
                         </div>
                     </div>
+ 
                     <div class="col-2">
-                        Waiting for Payment
-                    </div>
-                    <div class="col-2">
-                        <button type="button" class="btn btn-danger w-100">View Invoice</button>
+                        <a href="https://wa.me/6281295403122" type="button" class="btn btn-danger w-100">Kontak Agen</a>
                     </div>
                 </div>
             </div>
