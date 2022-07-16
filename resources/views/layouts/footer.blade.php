@@ -1,4 +1,3 @@
-@yield('content')
 <section id="footer">
       <div class="container mt-4">
         <div class="row">

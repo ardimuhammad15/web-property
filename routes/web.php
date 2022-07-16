@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\OrderController; 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,34 +17,31 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('index')->with('title','Home');
-})-> name('home');
-Route::get('/checkout', function () {
-    return view('checkout');
-})-> name('checkout');
+    return view('index')->with('title', 'Home');
+})->name('home');
 
-Route::get('/login', function () {
-    return view('login')->with('title','Login');
-})-> name('login');
+Route::get('login', function () {
+    return view('login')->with('title', 'Login');
+})->name('login');
 
-Route::get('/signup', function () {
-    return view('signup')->with('title','Sign Up');
+Route::get('signup', function () {
+    return view('signup')->with('title', 'Sign Up');
 })->name('signup');
 
-Route::get('/unit', function () {
-    return view('unit')->with('title','Unit');
+Route::get('unit', function () {
+    return view('unit')->with('title', 'Unit');
 })->name('unit');
 
 Route::resource('orders', OrderController::class)->only(['index', 'show']);
 
-Route::get('/checkout', function () {
-    return view('checkout')->with('title','Checkout');
+Route::get('checkout', function () {
+    return view('checkout')->with('title', 'Checkout');
 })->name('checkout');
 
-Route::get('/dashboard',[App\Http\Controllers\OrderController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [App\Http\Controllers\OrderController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/input_dashboard', function () {
-    return view('input_dashboard')->with('title','Dashboard-Admin');
+    return view('input_dashboard')->with('title', 'Dashboard-Admin');
 })->name('input_dashboard');
 
 Auth::routes();
