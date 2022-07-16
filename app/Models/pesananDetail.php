@@ -8,10 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class pesananDetail extends Model
 {
     use HasFactory;
+
+    protected $table = 'pesanan_detail_table';
+    protected $primaryKeys = 'id';
     protected $fillable = [
-        'fullname',
+        'id',
+        'name',
         'email',
         'phone',
         'occupation',
+        'payment_status',
+        'midtrans_url',
+        'midtrans_booking_code',
     ];
 }

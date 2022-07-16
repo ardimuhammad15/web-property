@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pesanan_details', function (Blueprint $table) {
+        Schema::create('rent_benefits', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('occupation');
-            $table->string('phone');
+            $table->bigInteger('rent_id');
+            $table->integer('kamar_mandi');
+            $table->integer('kamar_tidur');
+            $table->integer('luas');
             $table->timestamps();
+
+            $table->foreign('rent_id')->references('id')->on('rents')->onDelete('cascade');
         });
     }
 
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pesanan_details');
+        Schema::dropIfExists('rent_benefits');
     }
 };
