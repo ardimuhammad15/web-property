@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class rentBenefit extends Model
 {
     use HasFactory;
-    protected $table = 'rent__benefit_table';
+    protected $table = 'rent_benefit_table';
     protected $primaryKeys = 'id';
-    protected $fillable = ['id', 'kamar_mandi', 'kamar_tidur', 'luas'];
+    protected $fillable = ['id', 'rent_id', 'kamar_mandi', 'kamar_tidur', 'luas'];
 }

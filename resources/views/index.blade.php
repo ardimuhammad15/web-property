@@ -24,6 +24,7 @@
       <div class="row">
         <div class="card p-2" style="width: 23rem;">
           <a href="{{ route ('unit', 'minimalis_bsd') }}">
+            <!-- <a href="{{ route ('unit') }}"> -->
             <img src="Assets/img/rumah1.svg" alt="" class="d-block w-100">
           </a>
           <div class="card-fasilitas mt-3 p-1">
@@ -50,6 +51,7 @@
       <div class="row">
         <div class="card p-2" style="width: 23rem;">
           <a href="{{ route ('unit', 'primerose_sentul') }}">
+            <!-- <a href="{{ route ('unit') }}"> -->
             <img src="Assets/img/rumah2.svg" alt="" class="d-block w-100">
           </a>
           <div class="card-fasilitas mt-3 p-1">
@@ -66,7 +68,7 @@
 
           <div class="card-lokasi mt-4">
             <span>
-              <img src="Assets/img/icon_lokasi.svg" alt="" style="width: 30px;"> <span style="font-weight: 500 ; font-size: 20px">Serpong, BSD</span>
+              <img src="Assets/img/icon_lokasi.svg" alt="" style="width: 30px;"> <span style="font-weight: 500 ; font-size: 20px">Cadas Ngampar, Bogor</span>
             </span>
           </div>
         </div>
@@ -75,6 +77,7 @@
       <div class="row">
         <div class="card p-2" style="width: 23rem;">
           <a href="{{ route ('unit', 'bintaro_residence') }}">
+            <!-- <a href="{{ route ('unit') }}"> -->
             <img src="Assets/img/rumah3.svg" alt="" class="d-block w-100">
           </a>
           <div class="card-fasilitas mt-3 p-1">
@@ -91,7 +94,7 @@
 
           <div class="card-lokasi mt-4">
             <span>
-              <img src="Assets/img/icon_lokasi.svg" alt="" style="width: 30px;"> <span style="font-weight: 500 ; font-size: 20px">Serpong, BSD</span>
+              <img src="Assets/img/icon_lokasi.svg" alt="" style="width: 30px;"> <span style="font-weight: 500 ; font-size: 20px">Ciputat, Tangerang Selatan</span>
             </span>
           </div>
         </div>

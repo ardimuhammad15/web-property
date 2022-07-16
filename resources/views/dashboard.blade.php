@@ -21,9 +21,9 @@
                 <h3 style="font-size: 14px; font-weight: 600">
                     Rumah Minimalis BSD
                 </h3>
-                <p style="font-size: 12px; font-weight: 400">
+                <!-- <p style="font-size: 12px; font-weight: 400"> 
                     July 7, 2022
-                </p>
+                </p>-->
                 </span>
 
             </div>

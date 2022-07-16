@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\HomeController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +28,7 @@ Route::get('signup', function () {
     return view('signup')->with('title', 'Sign Up');
 })->name('signup');
 
-Route::get('unit/{rent:slug}', function () {
+Route::get('unit', function () {
     return view('unit')->with('title', 'Unit');
 })->name('unit');
 

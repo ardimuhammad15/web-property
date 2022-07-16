@@ -35,10 +35,10 @@ class OrderController extends Controller
                 'phone' => '029282',
             ),
         );
-         
+
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
-        return view('midtranstest',['snap_token' => $snapToken]);
+        return view('midtranstest', ['snap_token' => $snapToken]);
         Alert::success('Payment Success', 'Your Payment has been Successful');
     }
 
@@ -47,8 +47,8 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){
-
+    public function create()
+    {
     }
 
     /**
@@ -60,14 +60,14 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         DB::table('pesanan_details')->insert([
-            'fullname' => $request->name,
+            'name' => $request->name,
             'occupation' => $request->occupation,
             'email' => $request->email,
             'phone' => $request->phone
         ]);
-        sleep(5);
-        return redirect('/dashboard');
-        
+        //sleep(30);
+        return response()->json(['success' => 'Form is successfully submitted!']);
+        //return redirect('/dashboard');
     }
 
     /**
@@ -92,7 +92,7 @@ class OrderController extends Controller
     }
     public function payment()
     {
-        
+
         \Midtrans\Config::$serverKey = 'SB-Mid-server-7ChlCRNbt98g2bwTFoar_M9v';
         \Midtrans\Config::$isProduction = false;
         \Midtrans\Config::$isSanitized = true;
@@ -109,10 +109,10 @@ class OrderController extends Controller
                 'phone' => '029282',
             ),
         );
-         
+
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
-        return view('checkout',['snap_token' => $snapToken]);
+        return view('checkout', ['snap_token' => $snapToken]);
         Alert::success('Payment Success', 'Your Payment has been Successful');
     }
 
@@ -136,11 +136,9 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-     
     }
     public function dashboard()
     {
         return view('dashboard');
-
     }
 }

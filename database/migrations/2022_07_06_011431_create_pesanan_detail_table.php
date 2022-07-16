@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('pesanan_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('rent_id')->constrained();
             $table->string('name');
             $table->string('email');
             $table->string('occupation');
             $table->string('phone');
+            $table->boolean('is_paid')->default(false);
             $table->timestamps();
         });
     }

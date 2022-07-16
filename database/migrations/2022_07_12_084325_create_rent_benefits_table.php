@@ -15,13 +15,11 @@ return new class extends Migration
     {
         Schema::create('rent_benefits', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('rent_id');
+            $table->foreignId('rent_id')->constrained();
             $table->integer('kamar_mandi');
             $table->integer('kamar_tidur');
             $table->integer('luas');
             $table->timestamps();
-
-            $table->foreign('rent_id')->references('id')->on('rents')->onDelete('cascade');
         });
     }
 

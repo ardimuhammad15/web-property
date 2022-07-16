@@ -72,7 +72,7 @@
 
 
                 <div class="col-4 justify-content-center align-items-center">
-                    <form method="post" action="/payment/store">
+                    <form method="post" action="/payment/store" id="form-data">
                         {{ csrf_field() }}
                         <div class="mb-3">
                             <label for="email" class="form-label">Email Address</label>
@@ -104,12 +104,38 @@
     <script type="text/javascript">
         // For example trigger on button clicked, or any time you need
         var payButton = document.getElementById('pay-button');
-        payButton.addEventListener('click', function() {
+        payButton.addEventListener('click', function(e) {
             // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+            e.preventDefault();
             window.snap.pay('{{ $snap_token }}', {
                 onSuccess: function(result) {
                     /* You may add your own implementation here */
-                    console.log(result);
+                    let name = $('#full-name').val();
+                    let email = $('#email').val();
+                    let phone = $('#phone').val();
+                    let occupation = $('#occupation').val();
+
+                    $.ajax({
+                        url: "/payment/store",
+                        type: "POST",
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                            name: name,
+                            email: email,
+                            phone: phone, 
+                            occupation: occupation,
+                        },
+
+                        success: function(response) {
+                            console.log(response);
+                            var url = "{{ route('dashboard') }}"
+                            location.href = url;
+                        },
+                        error: function(response) {
+                            alert(response)
+                            console.log(response)
+                        }
+                    });
                 },
                 onPending: function(result) {
                     /* You may add your own implementation here */
@@ -123,7 +149,9 @@
                 },
                 onClose: function() {
                     /* You may add your own implementation here */
-                    alert('you closed the popup without finishing the payment');
+                    //alert('you closed the popup without finishing the payment');
+                    var url = "/dashboard"
+                    location.href = url;
                 }
             })
         });

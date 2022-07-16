@@ -6,7 +6,6 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-
 /* link */
 
 a:link {
@@ -19,7 +18,6 @@ a:visited {
     text-decoration: none;
 }
 
-
 /* navbar */
 
 .navbar {
@@ -28,6 +26,7 @@ a:visited {
 
 .nav-link {
     font-size: 16px;
+    color: black;
 }
 
 .garis_verikal {
@@ -40,7 +39,6 @@ a:visited {
     font-weight: 700;
 }
 
-
 /* hero section */
 
 #hero {
@@ -51,7 +49,6 @@ a:visited {
     width: 100%;
 }
 
-
 /* unit recommendation */
 
 .h2,
@@ -60,7 +57,6 @@ h2 {
     font-weight: 500;
     font-size: 30px;
 }
-
 
 /* recommendation */
 
@@ -84,7 +80,7 @@ h2 {
 }
 
 .card:hover {
-    background: linear-gradient( 150deg, var(--main-bg-color), #39d9f1, #0a6f7e, #01373f);
+    background: #3ad0e7;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: all ease-in 0.2s;
     color: aliceblue;
@@ -98,7 +94,6 @@ h2 {
     color: aliceblue;
     transition: all ease-in-out 0.2s;
 }
-
 
 /* deskripsi rumah */
 
@@ -124,7 +119,6 @@ h2 {
     font-weight: 400;
 }
 
-
 /* fasilitas */
 
 #fasilitas-rumah {
@@ -134,7 +128,6 @@ h2 {
 #fasilitas-rumah .card {
     color: #000;
 }
-
 
 /* hero bawah */
 
@@ -153,7 +146,6 @@ h2 {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-
 /* agents */
 
 .agent h2 {
@@ -168,7 +160,6 @@ h2 {
     font-weight: 400;
 }
 
-
 /* footer */
 
 #footer {
@@ -182,7 +173,6 @@ h2 {
 .footer h3 {
     font-weight: 600;
 }
-
 
 /* login */
 
@@ -224,4 +214,17 @@ h2 {
 
 a.btn.btn-danger {
     background-color: #dc3545;
+}
+
+/* unit */
+.deskripsi_unit span {
+    font-weight: 400;
+    color: black;
+    font-family: "Poppins", sans-serif;
+}
+
+.deskripsi_unit p {
+    font-weight: 400;
+    color: black;
+    font-family: "Poppins", sans-serif;
 }
